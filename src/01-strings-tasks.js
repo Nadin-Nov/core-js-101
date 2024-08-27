@@ -36,7 +36,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(string) {
-  return (string.lenght)
+  return (string.lenght);
 }
 
 /**
@@ -68,7 +68,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(string) {
-  const hello = "Hello, ";
+  const hello = 'Hello, ';
   const tempString = string.replace(hello, '');
   return tempString.replace('!', '');
 }
@@ -116,8 +116,9 @@ function removeLeadingAndTrailingWhitespaces(string) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(str, n) {
-  const num = Number(n)
-  let result = str.repeat(num);
+  const num = Number(n);
+  const result = str.repeat(num);
+  return result;
 }
 
 /**
@@ -133,7 +134,7 @@ function repeatString(str, n) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-  let result = str.replace(value, "");
+  const result = str.replace(value, '');
   return result;
 }
 
@@ -149,7 +150,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(tag) {
-  let result = tag.slice(1, -1);
+  const result = tag.slice(1, -1);
   return result;
 }
 
@@ -165,7 +166,7 @@ function unbracketTag(tag) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  const  newStr = str.toUpperCase();
+  const newStr = str.toUpperCase();
   return newStr;
 }
 
@@ -184,8 +185,9 @@ function convertToUpperCase(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  const newArr = str.split(';');
+  return newArr;
 }
 
 /**
@@ -211,8 +213,14 @@ function extractEmails(/* str */) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  if (width <= 0 || height <= 0) {
+    return '';
+  }
+  const top = '┌' + '─'.repeat(width - 2) + '┐\n';
+  const middle = '│' + ' '.repeat(width - 2) + '│\n'.repeat(height - 2);
+  const bottom = '└' + '─'.repeat(width - 2) + '┘\n';
+  return top + middle + bottom;
 }
 
 
