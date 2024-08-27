@@ -35,6 +35,7 @@ function getRectangleArea(width, height) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
+
 function getCircleCircumference(radius) {
   const pi = Math.PI;
   const circumference = 2 * pi * radius;
@@ -54,7 +55,9 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2;
+  const value1Div = value1 / 2;
+  const value2Div = value2 / 2;
+  return ((value1Div + value2Div) > Number.MAX_VALUE) ? Number.MAX_VALUE : value1Div + value2Div;
 }
 
 /**
@@ -141,6 +144,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
+
+/* что тут сложного и есть ли подвох */
+
 function getLastDigit(value) {
   const lastDigit = value % 10;
   return lastDigit;
@@ -159,7 +165,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  return Number(value);
+  return parseFloat(value);
 }
 
 /**
