@@ -85,7 +85,7 @@ function extractNameFromTemplate(string) {
  *   'cat'       => 'c'
  */
 function getFirstChar(string) {
-  return string[0];
+  return string.charAt(0);
 }
 
 /**
@@ -271,7 +271,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return typeof value === 'string';
+  return typeof value === 'string' || value instanceof String;
 }
 
 
