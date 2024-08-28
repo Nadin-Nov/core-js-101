@@ -27,8 +27,18 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  let word;
+  if (num % 15 === 0) {
+    word = 'FizzBuzz';
+  } else if (num % 5 === 0) {
+    word = 'Buzz';
+  } else if (num % 3 === 0) {
+    word = 'Fizz';
+  } else {
+    word = num;
+  }
+  return word;
 }
 
 
