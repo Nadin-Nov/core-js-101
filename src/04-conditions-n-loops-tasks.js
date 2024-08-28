@@ -208,10 +208,13 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  const min = (a <= b ? a : b);
+  const max = (b > a ? b : a);
+  const startOf = isStartIncluded ? `[${min}` : `(${min}`;
+  const endOf = isEndIncluded ? `${max}]` : `${max})`;
+  return `${startOf}, ${endOf}`;
 }
-
 
 /**
  * Reverse the specified string (put all chars in reverse order)
